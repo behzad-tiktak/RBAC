@@ -1,0 +1,174 @@
+﻿
+@page {
+    size: A4;
+    margin-top: 1.0cm;
+    margin-right: 1.5cm;
+    margin-left: 1.5cm;
+}
+
+@media print {
+    body {
+        margin: 0;
+        color: #000;
+        background-color: #fff;
+    }
+
+    /*-webkit-print-color-adjust: exact;*/
+    a[href]:after {
+        content: none !important;
+    }
+
+    thead {
+        border: 1px solid black !important;
+    }
+
+
+    p {
+        font-size: 12px !important;
+        orphans: 2;
+        widows: 2;
+    }
+
+    table {
+        font-size: 12px !important;
+        border: 2px solid black !important;
+    }
+
+    .panel-elfars {
+        border-color: black;
+    }
+
+        .panel-elfars tr:nth-child(even) td {
+            -webkit-print-color-adjust: exact;
+            background-color: #f2f2f2 !important;
+        }
+
+        .panel-elfars tr th {
+            -webkit-print-color-adjust: exact;
+            background-color: #cdcdcd !important;
+        }
+
+        .panel-elfars .panel-heading {
+            border-color: black;
+            -webkit-print-color-adjust: exact;
+            background: #00b69f !important;
+        }
+
+            .panel-elfars .panel-heading h1 {
+                -webkit-print-color-adjust: exact;
+                color: white !important;
+            }
+
+    #adminBtnGroup {
+        display: none;
+    }
+
+    #btnSearchEmployerOfProject, #btnReportAllProject, .printLinkIcon {
+        display: none;
+    }
+
+    .no-print {
+        display: none;
+    }
+
+    #reportRequestHolder .label {
+        border: none;
+    }
+
+    #reportRequestHolder table tr td {
+        padding: 0 3px 0 0;
+    }
+
+    /*#reportRequestHolder .nav-tabs > li.active > a, .nav-tabs > li.active {
+        background-color: #00b69f !important;
+        color: #ffffff !important;        
+        border-radius:5px 5px 0 0 !important;        
+        border-color:#00b69f !important;
+    }*/
+    #reportRequestHolder .nav-tabs > li:not(.active) {
+        display: none;
+    }
+
+    #reportRequestHolder .nav-tabs > li > a {
+        border-color: black !important;
+    }
+
+    #reportRequestHolder .tab-content {
+        border: 1px solid black;
+        border-top: none;
+    }
+
+    #reportRequestHolder .nav-tabs {
+        border-bottom: 1px solid black;
+    }
+
+    #reportRequestHolder .table-bordered td, #reportRequestHolder .table-bordered th {
+        border: 1px solid black !important;
+    }
+
+        #reportRequestHolder .table-bordered th p {
+            text-align: center;
+            float: none !important;
+        }
+
+    /*#reportRequestHolder .spliterInPrint:before {
+        content: '\00a0-';
+    }*/
+
+    .print-center-text {
+        float: none !important;
+        text-align: center;
+    }
+
+    #reportRequestHolder p {
+        font-size: 13px !important;
+        /*float: right;*/
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tfoot {
+        display: table-footer-group;
+    }
+
+    #page-body {
+        padding-bottom: 25px;
+    }
+
+    table {
+        page-break-inside: auto;
+    }
+
+    .break-after {
+        page-break-before: page-break-inside:avoid;
+        page-break-after: auto;
+    }
+
+    thead.colorfull tr th {
+        background: #929292 !important;
+    }
+    /*thead.colorfull tr th p{color:#f2f2f2 !important;}*/
+    .input-unform {
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: dotted !important;
+        border-color: #333 !important;
+        color: #333 !important;
+        background-color: transparent !important;
+        text-decoration: dotted;
+        border-radius: 0px !important;
+        padding: 7px 0 0 0;
+        line-height: 1.5;
+        position: relative;
+        top: -10px;
+        overflow: hidden;
+    }
+
+    .textboxBootstrap[disabled], .textboxBootstrap[readonly] {
+        background-color: transparent !important;
+        opacity: 1;
+    }
+}

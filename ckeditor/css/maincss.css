@@ -1,0 +1,29 @@
+﻿/*@font-face {
+    font-family: 'BNazanin';
+    src: url('../../font/BNazanin.eot#iefix') format('embedded-opentype'), url('../../../font/BNazanin.eot') format('embedded-opentype'), url('../../../font/BNazanin.ttf') format('truetype'), url('../../../font/BNazanin.woff') format('woff');
+}*/
+
+@font-face {
+    font-family: 'Gandom';
+    src: url('../../fonts/Gandom.eot#iefix') format('embedded-opentype'), url('../../fonts/Gandom.eot') format('embedded-opentype'), url('../../fonts/Gandom.ttf') format('truetype'), url('../../fonts/Gandom.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Gandom-FD';
+    src: url('../../fonts/Gandom-FD.eot#iefix') format('embedded-opentype'), url('../../fonts/Gandom-FD.eot') format('embedded-opentype'), url('../../fonts/Gandom-FD.ttf') format('truetype'), url('../../fonts/Gandom-FD.woff') format('woff');
+}
+
+body {
+    direction: rtl;
+    /*background: #f2f2f2;*/
+    /*background: url('../../img/bg.jpg') repeat;
+    color: #555;*/
+    /*font-family: 'IRANSans',Tahoma, Verdana, Geneva, sans-serif;*/
+    margin: 0;
+    padding: 0;
+}
+.textBody{ 
+    font-family: "Gandom-FD";
+    padding-right: 1%;
+    padding-left: 1%;
+}
