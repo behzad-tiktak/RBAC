@@ -128,7 +128,6 @@
             <a href="<%= GetHomePageUrl() %>" class="btn">🏠 بازگشت به صفحه اصلی</a>
         </div>
     </form>
-
     <script runat="server">
         protected string GetCurrentUsername()
         {

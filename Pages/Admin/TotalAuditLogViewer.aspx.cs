@@ -18,7 +18,7 @@ public partial class Pages_Admin_TotalAuditLogViewer : BasePage
 
     protected override string[] RequiredPermissions
     {
-        get { return new string[] { "AuditLogs.View" }; }
+        get { return new string[] { "AuditLog.View" }; }
     }
 
     protected void Page_Load(object sender, EventArgs e)

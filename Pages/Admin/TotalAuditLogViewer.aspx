@@ -176,17 +176,20 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager runat="server" />
+        <asp:ScriptManager runat="server" EnablePageMethods="true" />
+        
+        <!-- HiddenField برای کنترل نمایش Modal -->
+        <asp:HiddenField ID="hfShowModal" runat="server" Value="0" />
         
         <div class="container-fluid">
             <div class="page-header">
-                <h2><span class="fa fa-list-alt"></span> مشاهده لاگ‌های سیستم</h2>
+                <h2><span class="glyphicon glyphicon-list-alt"></span> مشاهده لاگ‌های سیستم</h2>
             </div>
             
             <!-- Filter Panel -->
             <div class="filter-panel">
                 <h4 class="text-primary">
-                    <span class="fa fa-filter"></span> فیلترها
+                    <span class="glyphicon glyphicon-filter"></span> فیلترها
                 </h4>
                 <hr />
                 
@@ -221,9 +224,7 @@
                     
                     <div class="col-md-2" style="padding-top: 25px;">
                         <asp:Button ID="btnSearch" runat="server" Text="جستجو" 
-                            CssClass="btn btn-primary btn-block" OnClick="btnSearch_Click">
-                            <%--<span class="fa fa-search"></span>--%>
-                        </asp:Button>
+                            CssClass="btn btn-primary btn-block" OnClick="btnSearch_Click" />
                     </div>
                 </div>
                 
@@ -257,15 +258,16 @@
                             <ItemTemplate>
                                 <asp:LinkButton ID="btnDetails" runat="server" 
                                     CssClass="btn btn-info btn-sm"
-                                    OnClick="btnDetails_Click">
-                                    <%--<span class="fa fa-eye-open"></span>--%> جزئیات
+                                    OnClick="btnDetails_Click"
+                                    CausesValidation="false">
+                                    <span class="glyphicon glyphicon-eye-open"></span> جزئیات
                                 </asp:LinkButton>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
                     <EmptyDataTemplate>
                         <div class="no-data">
-                            <span class="fa fa-info-sign" style="font-size: 48px;"></span>
+                            <span class="glyphicon glyphicon-info-sign" style="font-size: 48px;"></span>
                             <p>هیچ لاگی یافت نشد</p>
                         </div>
                     </EmptyDataTemplate>
@@ -275,7 +277,7 @@
         </div>
         
         <!-- Bootstrap Modal -->
-        <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel">
+        <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel" data-backdrop="static">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -283,7 +285,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <h4 class="modal-title" id="detailsModalLabel">
-                            <span class="fa fa-zoom-in icon-prefix"></span>
+                            <span class="glyphicon glyphicon-zoom-in icon-prefix"></span>
                             جزئیات کامل لاگ
                         </h4>
                     </div>
@@ -293,14 +295,14 @@
                         <div class="detail-group">
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
-                                    <span class="fa fa-info-sign icon-prefix"></span>
+                                    <span class="glyphicon glyphicon-info-sign icon-prefix"></span>
                                     اطلاعات اصلی
                                 </div>
                                 <div class="panel-body" style="padding: 0;">
                                     <table class="table detail-table">
                                         <tr>
                                             <td class="detail-label">
-                                                <span class="fa fa-tag icon-prefix"></span>
+                                                <span class="glyphicon glyphicon-tag icon-prefix"></span>
                                                 شناسه لاگ:
                                             </td>
                                             <td class="detail-value">
@@ -309,7 +311,7 @@
                                         </tr>
                                         <tr>
                                             <td class="detail-label">
-                                                <span class="fa fa-user icon-prefix"></span>
+                                                <span class="glyphicon glyphicon-user icon-prefix"></span>
                                                 کاربر:
                                             </td>
                                             <td class="detail-value">
@@ -318,7 +320,7 @@
                                         </tr>
                                         <tr>
                                             <td class="detail-label">
-                                                <span class="fa fa-flash icon-prefix"></span>
+                                                <span class="glyphicon glyphicon-flash icon-prefix"></span>
                                                 عملیات:
                                             </td>
                                             <td class="detail-value">
@@ -327,7 +329,7 @@
                                         </tr>
                                         <tr>
                                             <td class="detail-label">
-                                                <span class="fa fa-th icon-prefix"></span>
+                                                <span class="glyphicon glyphicon-th icon-prefix"></span>
                                                 جدول:
                                             </td>
                                             <td class="detail-value">
@@ -336,7 +338,7 @@
                                         </tr>
                                         <tr>
                                             <td class="detail-label">
-                                                <span class="fa fa-barcode icon-prefix"></span>
+                                                <span class="glyphicon glyphicon-barcode icon-prefix"></span>
                                                 شناسه رکورد:
                                             </td>
                                             <td class="detail-value">
@@ -345,7 +347,7 @@
                                         </tr>
                                         <tr>
                                             <td class="detail-label">
-                                                <span class="fa fa-calendar icon-prefix"></span>
+                                                <span class="glyphicon glyphicon-calendar icon-prefix"></span>
                                                 تاریخ و زمان:
                                             </td>
                                             <td class="detail-value">
@@ -354,7 +356,7 @@
                                         </tr>
                                         <tr>
                                             <td class="detail-label">
-                                                <span class="fa fa-globe icon-prefix"></span>
+                                                <span class="glyphicon glyphicon-globe icon-prefix"></span>
                                                 آدرس IP:
                                             </td>
                                             <td class="detail-value">
@@ -363,7 +365,7 @@
                                         </tr>
                                         <tr>
                                             <td class="detail-label">
-                                                <span class="fa fa-phone icon-prefix"></span>
+                                                <span class="glyphicon glyphicon-phone icon-prefix"></span>
                                                 مرورگر (User Agent):
                                             </td>
                                             <td class="detail-value">
@@ -379,7 +381,7 @@
                         <div class="detail-group">
                             <div class="panel panel-warning">
                                 <div class="panel-heading">
-                                    <span class="fa fa-backward icon-prefix"></span>
+                                    <span class="glyphicon glyphicon-backward icon-prefix"></span>
                                     مقدار قبلی (Old Value)
                                 </div>
                                 <div class="panel-body">
@@ -394,7 +396,7 @@
                         <div class="detail-group">
                             <div class="panel panel-success">
                                 <div class="panel-heading">
-                                    <span class="fa fa-forward icon-prefix"></span>
+                                    <span class="glyphicon glyphicon-forward icon-prefix"></span>
                                     مقدار جدید (New Value)
                                 </div>
                                 <div class="panel-body">
@@ -408,7 +410,7 @@
                     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">
-                            <span class="fa fa-remove"></span> بستن
+                            <span class="glyphicon glyphicon-remove"></span> بستن
                         </button>
                     </div>
                 </div>
@@ -416,13 +418,29 @@
         </div>
     </form>
     
-    <!-- jQuery -->
+    <!-- jQuery باید قبل از Bootstrap لود بشه -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Bootstrap 3 JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
     <script type="text/javascript">
-        function showDetailsModal() {
+        // بررسی HiddenField برای نمایش Modal بعد از PostBack
+        $(document).ready(function () {
+            console.log('Page loaded - checking for modal trigger');
+
+            var showModal = $('#<%= hfShowModal.ClientID %>').val();
+            console.log('HiddenField value: ' + showModal);
+
+            if (showModal === '1') {
+                console.log('Opening modal...');
+                $('#detailsModal').modal('show');
+                // ریست کردن HiddenField
+                $('#<%= hfShowModal.ClientID %>').val('0');
+            }
+        });
+
+        // تست دستی Modal
+        function testModal() {
             $('#detailsModal').modal('show');
         }
     </script>
